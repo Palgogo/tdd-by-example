@@ -1,7 +1,9 @@
 package guru.springframework;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+
+    public abstract Money times(int multiplier);
 
     public Money(int amount) {
         this.amount = amount;
@@ -14,4 +16,12 @@ public class Money {
                 && this.getClass().equals(object.getClass());
     }
 
+    public static Dollar dollar(int dollar) {
+        return new Dollar(dollar);
+    }
+
+
+    public static Franc franc(int franc) {
+        return new Franc(franc);
+    }
 }

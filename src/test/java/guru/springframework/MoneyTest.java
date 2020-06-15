@@ -9,28 +9,28 @@ public class MoneyTest {
 
     @Test
     void testMultiplicationDollar() {
-        Dollar five = new Dollar(5);
-        assertEquals(new Dollar(10), five.times(2));
-        assertEquals(new Dollar(15), five.times(3));
+        Dollar five = Money.dollar(5);
+        assertEquals(Money.dollar(10), five.times(2));
+        assertEquals(Money.dollar(15), five.times(3));
     }
 
     @Test
     void testEqualityDollar() {
-        assertEquals(new Dollar(5), new Dollar(5));
-        assertNotEquals(new Dollar(5), new Dollar(9));
-        assertNotEquals(new Dollar(5), new Franc(5));
+        assertEquals(Money.dollar(5), Money.dollar(5));
+        assertNotEquals(Money.dollar(5), Money.dollar(9));
+        assertNotEquals(Money.dollar(5), Money.franc(5));
     }
 
     @Test
     void testMultiplicationFranc() {
-        Franc five = new Franc(5);
-        assertEquals(new Franc(10), five.times(2));
-        assertEquals(new Franc(15), five.times(3));
+        Franc five = Money.franc(5);
+        assertEquals(Money.franc(10), five.times(2));
+        assertEquals(Money.franc(15), five.times(3));
     }
 
     @Test
     void testEqualityFranc() {
-        assertEquals(new Franc(5), new Franc(5));
-        assertNotEquals(new Franc(5), new Franc(9));
+        assertEquals(Money.franc(5), Money.franc(5));
+        assertNotEquals(Money.franc(5), Money.franc(9));
     }
 }
