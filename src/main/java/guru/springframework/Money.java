@@ -2,6 +2,12 @@ package guru.springframework;
 
 public abstract class Money {
     protected int amount;
+    protected String currency;
+
+    public Money(int amount, String currency) {
+        this.amount = amount;
+        this.currency = currency;
+    }
 
     public abstract Money times(int multiplier);
 
@@ -17,11 +23,11 @@ public abstract class Money {
     }
 
     public static Dollar dollar(int dollar) {
-        return new Dollar(dollar);
+        return new Dollar(dollar, "USD");
     }
 
 
     public static Franc franc(int franc) {
-        return new Franc(franc);
+        return new Franc(franc, "CHF");
     }
 }
