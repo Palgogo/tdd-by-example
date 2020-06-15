@@ -13,4 +13,5 @@ public class Money {
         return amount == money.amount
                 && this.getClass().equals(object.getClass());
     }
+
 }
